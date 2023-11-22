@@ -1,0 +1,125 @@
+@use "hero";
+@use "war";
+@use "header";
+@use "questions";
+@use "variaveis";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+}
+
+body{
+    background-color: variaveis.$corDeFundo;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+}
+
+.text--big {
+    @include text(28px);
+    @media (max-width: 768px) {
+        @include text(14px);
+    }
+}
+.text {
+    @include text;
+    @media (max-width: 768px) {
+        @include title(12px);
+    }
+}
+
+.text--small {
+    @include text(12px);
+}
+
+.title--big {
+    @include title(44px);
+    @media (max-width: 768px) {
+        @include title(26px);
+    }
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(28px);
+    @media (max-width: 768px) {
+        @include title(16px);
+    }
+}
+
+.places{
+    padding: 5.6vw;
+    max-width: 1920px;
+    color: variaveis.$corTextoPrincipal;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0 auto;
+    h1{
+        margin-bottom: 50px;
+    }
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        @media (max-width: 1223px) {
+            display: block;
+            img{
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            display: block;
+        }
+    
+}
+img{
+    width: 100%;
+    }
+    &__games{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        a{
+            img{
+                width: 80%;
+                margin-bottom: 100px;
+                border-radius: 10px;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        @media (max-width: 1223px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+}
+
+.footer{
+    display: flex;
+    &__container{
+        max-width: 1920px;
+        margin: 0 auto;
+        img{
+            max-width:100px ;
+        }
+    }
+}
+
+

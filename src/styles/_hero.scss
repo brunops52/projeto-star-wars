@@ -1,0 +1,28 @@
+@use "variaveis";
+.hero{
+    padding: 5.6vw;
+    min-height: 80vh;
+    max-width: 1920px;
+    background-image: url(../IMAGES/FUNDO/Fundo_claro.jpg);
+    background-size: cover;
+    &__content{
+        color: variaveis.$corTextoPrincipal2;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0 auto;
+        width: 60%;
+        img{
+            width:450px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            img{
+                width: 200px;
+                margin-bottom: 30px;
+                margin-top: 100px;
+            }
+            p{font-size: 16px;}
+        }
+    }
+}
